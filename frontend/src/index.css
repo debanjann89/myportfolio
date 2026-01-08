@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+    scroll-behavior: smooth;
+}
+
+@layer components {
+    /* Updated Sky-Blue Liquid Glass */
+    .liquid-glass {
+        @apply backdrop-blur-xl border border-white/60 shadow-xl;
+        /* The Magic Gradient: White top-left -> Soft Sky Blue bottom-right */
+        background: linear-gradient( 135deg, rgba(255, 255, 255, 0.8) 0%, rgba(224, 242, 254, 0.5) 100%/* This is Tailwind's sky-100 color */
+        );
+    }
+}
