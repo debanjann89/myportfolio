@@ -1,19 +1,16 @@
 /* =========================================
-   SKY COLOR LIQUID GLASS NAVBAR
+   SKY COLOR LIQUID GLASS NAVBAR (Stronger Effect)
    ========================================= */
 
 .navbar {
-    /* The Magic Glass Effect */
-    background: rgba(135, 206, 235, 0.15);
-    /* Sky Blue with 15% opacity */
-    backdrop-filter: blur(12px);
-    /* Blurs the content behind it */
-    -webkit-backdrop-filter: blur(12px);
-    /* Safari support */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* Subtle white border */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    /* Soft shadow */
+    /* Made opacity higher (0.6) for better visibility */
+    background: rgba(135, 206, 235, 0.6);
+    backdrop-filter: blur(16px);
+    /* Increased blur */
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /* More visible border */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -21,6 +18,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    transition: all 0.3s ease;
 }
 
 .navbar-container {
@@ -34,21 +32,39 @@
 }
 
 
-/* Logo Styling */
+/* =========================================
+   TWO-COLOR LOGO STYLING (New)
+   ========================================= */
 
 .navbar-logo a {
-    color: #fff;
-    /* White text looks best on glass */
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(135, 206, 235, 0.8);
-    /* Glowing effect */
+    letter-spacing: 0.5px;
 }
 
 
-/* Menu Items (Desktop) */
+/* "My" - Black Color */
+
+.logo-my {
+    color: #1a1a1a;
+    /* Deep Black */
+}
+
+
+/* "Portfolio" - Light Blue Color (Matches your name) */
+
+.logo-portfolio {
+    color: #0099ff;
+    /* Bright Light Blue */
+    text-shadow: 0 0 10px rgba(0, 153, 255, 0.4);
+    /* Subtle glow */
+}
+
+
+/* =========================================
+   MENU LINKS (Desktop)
+   ========================================= */
 
 .nav-menu {
     display: flex;
@@ -57,29 +73,29 @@
 }
 
 .nav-item a {
-    color: #e0e0e0;
+    /* Made links darker for better contrast against the glass */
+    color: #2c3e50;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
 
 .nav-item a:hover {
-    background: rgba(135, 206, 235, 0.3);
-    /* Highlights on hover */
-    color: #fff;
+    background: rgba(255, 255, 255, 0.4);
+    color: #0099ff;
+    /* Turns blue on hover */
     transform: translateY(-2px);
 }
 
 .menu-icon {
     display: none;
-    /* Hidden on desktop */
 }
 
 
 /* =========================================
-   MOBILE RESPONSIVENESS (The Drawer)
+   MOBILE RESPONSIVENESS (Hamburger Drawer)
    ========================================= */
 
 @media screen and (max-width: 960px) {
@@ -89,7 +105,10 @@
         top: 25px;
         right: 20px;
         cursor: pointer;
-        color: white;
+    }
+    /* Use dark icon on mobile for visibility */
+    .menu-icon svg {
+        fill: #1a1a1a;
     }
     .nav-menu {
         display: flex;
@@ -98,15 +117,13 @@
         justify-content: center;
         width: 100%;
         height: 100vh;
-        /* Full screen height */
         position: absolute;
         top: 0;
         left: -100%;
-        /* Hidden by default */
         opacity: 0;
         transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        /* Mobile Menu Glass Effect (Darker for readability) */
-        background: rgba(10, 25, 47, 0.95);
+        /* Darker mobile menu background */
+        background: rgba(10, 25, 47, 0.98);
         backdrop-filter: blur(15px);
     }
     .nav-menu.active {
@@ -119,5 +136,6 @@
     .nav-item a {
         font-size: 1.5rem;
         color: #fff;
+        /* White links on dark mobile menu */
     }
 }
