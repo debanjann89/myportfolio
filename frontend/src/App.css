@@ -1,42 +1,64 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* =========================================
+   GLOBAL MOBILE FIXES (Add to bottom of App.css)
+   ========================================= */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media screen and (max-width: 768px) {
+    /* 1. Prevent Horizontal Scrolling */
+    body,
+    html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    /* 2. Containers */
+    .container,
+    section {
+        padding: 40px 15px !important;
+        /* Consistent padding */
+        width: 100% !important;
+    }
+    /* 3. Typography Scaling */
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+    }
+    h2 {
+        font-size: 1.8rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+        line-height: 1.6;
+    }
+    /* 4. Make Grid/Flex items stack vertically */
+    .grid-container,
+    .projects-grid,
+    .skills-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        /* Force single column */
+        gap: 25px;
+    }
+    .flex-row,
+    .about-content {
+        flex-direction: column !important;
+    }
+    /* 5. Images & Cards */
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        /* Optional: adds rounded corners */
+    }
+    .card,
+    .project-card {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    /* 6. Form Inputs (Contact) */
+    input,
+    textarea,
+    button {
+        width: 100% !important;
+        font-size: 1rem;
+        /* Prevents iPhone zooming on focus */
+    }
 }
