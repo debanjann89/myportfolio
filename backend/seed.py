@@ -79,7 +79,7 @@ async def seed_data():
             "name": "Graphic Design Internship", 
             "issuer": "Teachnook", 
             "year": "2024",
-            "pdf_link": "/certs/internship.pdf"
+            "pdf_link": "/certs/graphicdesigninternship.pdf"
         }
     ]
     if certs:
